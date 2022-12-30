@@ -66,5 +66,45 @@ color: ${props => props.theme.text};
   }
 `
 
+const NavBar = () => {
+  const [click, setClick] = useState(false);
+  return (
+      <NavContainer click={click}
+          initial={{
+              y: '-100%'
+          }}
+          animate={{
+              y: 0
+          }}
+          transition={{
+              duration: 1, delay:2
+          }}
+      >
+          <MenuItems
+          drag= 'y'
+          dragContainer= {{
+              top: 0,
+              bottom: 70,
+          }}
+          dragElastic ={0.05}
+          dragSnapToOrigin
+          >
+              <MenuBtn onClick={() => setClick(!click)}>Menu</MenuBtn>
+              <MenuItem
+              whileHover={{scale:.1,y:-5}}
+              whileTap={{scale:0.9,Y:0}}
+              > Home</MenuItem>
+              <MenuItem
+              whileHover={{scale:.1,y:-5}}
+              whileTap={{scale:0.9,Y:0}}
+              > Lazy</MenuItem>
+              <MenuItem
+              whileHover={{scale:.1,y:-5}}
+              whileTap={{scale:0.9,Y:0}}
+              > Offer</MenuItem>
+          </MenuItems>
+      </NavContainer>
+  )
+}
 
 export default NavBar
