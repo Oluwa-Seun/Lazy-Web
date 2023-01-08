@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
-
 import img1 from '../assets/Images/img1.jpeg';
 import lazyboy36 from '../assets/Images/lazyboy36.png';
 import lazyboy38 from '../assets/Images/lazyboy38.png';
